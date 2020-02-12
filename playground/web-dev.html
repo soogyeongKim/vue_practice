@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+    </div>
+
+    <script>
+        /*
+        case 1
+
+        //$('#app'); 아래와 동일 한 jQuery
+        var div = document.querySelector('#app');
+        //console.log(div);
+
+        div.innerHTML ='hello world' ;
+        */
+
+        /* 
+        case 2 : 일반 적인 html 개발 방식
+        */
+
+        var div = document.querySelector('#app');
+        var str = 'hello world';
+        div.innerHTML = str;
+
+        str = 'Hello World !';
+        div.innerHTML = str;
+        
+
+    </script>
+</body>
+</html>

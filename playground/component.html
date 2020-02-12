@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <app-content></app-content>
+        <app-footer></app-footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        /* 
+        전역 component 등록 : 실제 서비스에서는 잘 사용 되지 않음
+
+        Vue.component('컴포넌트 이름',컴포넌트 내용);
+
+        */
+
+        Vue.component('app-header',{
+            template: '<h1>Header</h1>'
+        });
+        Vue.component('app-content',{
+            template: '<div>Content</div>'
+        });
+
+        new Vue({
+            el: '#app',
+            //지역 components 등록
+            components: {
+                'app-footer':{
+                    template: '<footer>footer</footer>'
+                }
+            }
+        });
+
+        /*
+        전역 컴포넌트와 지역 컴포넌트 차이
+        single-page-component 에서 지역 컴포넌트는 특정 컴포넌트 하단에서 어떤 것이 등록 되어 있는지 내용 확인이 가능 (개발자 도구에서 components 속성으로 확인 가능)
+        전역 컴포넌트는 plugin 이나 library 등 전체에서 사용 될때 등록
+        */
+
+        /*
+        인스턴스를 2개 이상 생성 했을 때 전역 component 는 제대로 등록이 되지만 지역 component는 등록이 안됨 !! 당연한 거,,,
+        */
+    </script>
+</body>
+</html>
